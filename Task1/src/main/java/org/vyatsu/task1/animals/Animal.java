@@ -6,9 +6,11 @@ public abstract class Animal {
     private int maxRunDistance;
     private int maxSwimDistance;
     private String type;
-
     public String getType() {
         return type;
+    }
+    public String getName() {
+        return name;
     }
 
     public Animal(String name, String type, int age, int maxRunDistance, int maxSwimDistance) {
@@ -28,6 +30,7 @@ public abstract class Animal {
             System.out.println(this.name + " пробежал " + dist);
         }
     }
+
     public void swim(int swimDist) {
         if (maxSwimDistance == 0) {
             System.out.println(this.name + " не умеет плавать ");
@@ -39,6 +42,6 @@ public abstract class Animal {
         {
             System.out.println(this.name + " проплыл " + swimDist);
         }
-    }
-}
+        }
 
+    }

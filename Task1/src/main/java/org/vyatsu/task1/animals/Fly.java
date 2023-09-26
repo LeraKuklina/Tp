@@ -2,12 +2,26 @@ package org.vyatsu.task1.animals;
 
 public class Fly extends Arthropods {
     public static int count;
-    public Fly(String name, int age, int maxRunDistance,int maxSwimDistance) {
-        super(name, "Муха",age, maxRunDistance, maxSwimDistance);
+    private int maxFlydistance;
+
+    public Fly(String name, int age, int maxRunDistance, int maxSwimDistance, String mes,int maxFlyDistance) {
+        super(name, "Муха", age, maxRunDistance, maxSwimDistance, mes);
         count++;
+        this.maxFlydistance = maxFlyDistance;
     }
-    public String dangerous() {
-        if (this.getType() == "Муха") return "Муха может быть переносчиком различных болезней.";
-        return null;
+    public void flyy(
+            int flyDist) {
+        if (maxFlydistance == 0) {
+            System.out.println( " не умеет летать ");
+        }
+        else if (flyDist >= maxFlydistance) {
+            System.out.println( "Igor не пролетела " + flyDist);
+        }
+        else
+        {
+            System.out.println( "Igor пролетела " + flyDist);
+        }
     }
 }
+
+
